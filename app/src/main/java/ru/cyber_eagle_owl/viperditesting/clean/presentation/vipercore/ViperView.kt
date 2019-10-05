@@ -2,7 +2,7 @@ package ru.cyber_eagle_owl.viperditesting.clean.presentation.vipercore
 
 import android.view.View
 
-interface ViperView <P : ViperPresenter<V, P>, V : ViperView<P, V>>{
+interface ViperView <P : ViperPresenter>{
 
     val viperRootView: View
 

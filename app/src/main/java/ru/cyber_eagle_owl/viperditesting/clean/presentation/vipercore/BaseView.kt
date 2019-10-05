@@ -3,7 +3,7 @@ package ru.cyber_eagle_owl.viperditesting.clean.presentation.vipercore
 import android.view.View
 import javax.inject.Inject
 
-open class BaseView<V : ViperView<P, V>, P : ViperPresenter<V, P>> : ViperView<P, V> {
+open class BaseView<P : ViperPresenter> : ViperView<P> {
 
     @Inject
     override lateinit var presenter: P

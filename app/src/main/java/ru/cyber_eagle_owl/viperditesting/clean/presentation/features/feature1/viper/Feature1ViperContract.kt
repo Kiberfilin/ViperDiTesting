@@ -6,16 +6,24 @@ import ru.cyber_eagle_owl.viperditesting.clean.presentation.vipercore.ViperView
 
 interface Feature1ViperContract {
 
-    interface MainView : ViperView {
+    interface MainView : ViperView<MainPresenter> {
 
         fun onFinishInflate()
 
         fun changeText(newText: String)
     }
 
-    interface MainPresenter : ViperPresenter<MainView> {
+    interface MainPresenter : ViperPresenter {
 
-        fun onViewCreated()
+        var view: MainView
+
+        fun onViewCreated(view: MainView)
+
+        fun onPresenterCheckingTvClick()
+
+        fun onInteractorTowardsRepositoryCheckingTvClick()
+
+        fun onInteractorFromRepositoryCheckingTvClick()
     }
 
     interface MainRouter : ViperRouter {
