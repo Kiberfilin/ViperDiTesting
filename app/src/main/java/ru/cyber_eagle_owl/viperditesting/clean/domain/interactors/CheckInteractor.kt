@@ -1,6 +1,5 @@
 package ru.cyber_eagle_owl.viperditesting.clean.domain.interactors
 
-import android.util.Log
 import ru.cyber_eagle_owl.viperditesting.clean.domain.boundaries.presenter.inputports.CheckInteractorPresentationInputPort
 import ru.cyber_eagle_owl.viperditesting.clean.domain.boundaries.presenter.outputports.CheckInteractorPresentationOutputPort
 import ru.cyber_eagle_owl.viperditesting.clean.domain.boundaries.repository.inputports.CheckInteractorDataInputPort

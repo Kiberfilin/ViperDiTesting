@@ -14,6 +14,13 @@ class Feature1MainPresenter @Inject constructor() : BasePresenter(),
     @Inject
     lateinit var checkInteractor: CheckInteractorPresentationInputPort
 
+    @Inject
+    lateinit var router: Feature1ViperContract.MainRouter
+
+    override fun onRouterPreFlightCheckingTvClick() {
+        router.preFlightCheck()
+    }
+
     override fun onInteractorTowardsRepositoryHasBeenChecked(towardsRepositoryCheckResult: String) {
         if (isTowardsRepositoryDirectionChecking) view.changeText(towardsRepositoryCheckResult)
     }

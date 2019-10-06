@@ -4,7 +4,6 @@ import android.util.Log
 import android.widget.TextView
 import ru.cyber_eagle_owl.viperditesting.R
 import ru.cyber_eagle_owl.viperditesting.clean.presentation.vipercore.BaseView
-import timber.log.Timber
 import javax.inject.Inject
 
 class Feature1MainView @Inject constructor() : BaseView<Feature1ViperContract.MainPresenter>(),
@@ -14,22 +13,24 @@ class Feature1MainView @Inject constructor() : BaseView<Feature1ViperContract.Ma
     private lateinit var presenterCheckingTv: TextView
     private lateinit var interactorTowardsRepositoryCheckingTv: TextView
     private lateinit var interactorFromRepositoryCheckingTv: TextView
+    private lateinit var routerPreFlightTestingTv: TextView
 
     override fun onFinishInflate() {
-        Timber.d("onFinishInflate()")
+        Log.d("TAG", "onFinishInflate()")
         initViews()
         setOnClickListeners()
         presenter.onViewCreated(this)
     }
 
     private fun initViews() {
-        Timber.d("initViews()")
+        Log.d("TAG", "initViews()")
         helloTv = viperRootView.findViewById(R.id.helloTv)
         presenterCheckingTv = viperRootView.findViewById(R.id.prsntrCheckTv)
         interactorTowardsRepositoryCheckingTv =
             viperRootView.findViewById(R.id.interactorTowardsRepositoryCheckingTv)
         interactorFromRepositoryCheckingTv =
             viperRootView.findViewById(R.id.interactorFromRepositoryCheckTv)
+        routerPreFlightTestingTv = viperRootView.findViewById(R.id.routerPreFlightCheckingTv)
     }
 
     private fun setOnClickListeners() {
@@ -46,10 +47,13 @@ class Feature1MainView @Inject constructor() : BaseView<Feature1ViperContract.Ma
             Log.d("TAG", "interactorFromRepositoryCheckingTv.setOnClickListener")
             presenter.onInteractorFromRepositoryCheckingTvClick()
         }
+        routerPreFlightTestingTv.setOnClickListener {
+            Log.d("TAG", "routerPreFlightTestingTv.setOnClickListener")
+            presenter.onRouterPreFlightCheckingTvClick()
+        }
     }
 
     override fun changeText(newText: String) {
-        Timber.d("changeText($newText)")
         Log.d("TAG", "changeText($newText)")
         helloTv.text = newText
     }

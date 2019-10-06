@@ -1,4 +1,4 @@
-package ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature1
+package ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2
 
 import android.os.Bundle
 import android.util.Log
@@ -9,7 +9,7 @@ import ru.cyber_eagle_owl.viperditesting.clean.base.BaseActivity
 import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature1.viper.Feature1ViperContract
 import javax.inject.Inject
 
-class Feature1Activity : BaseActivity() {
+class Feature2Activity : BaseActivity() {
 
     private var currentToast: Toast? = null
 
@@ -20,7 +20,7 @@ class Feature1Activity : BaseActivity() {
         super.onCreate(savedInstanceState)
         Log.d("TAG", "onCreate(savedInstanceState: Bundle?)")
 
-        val rootView = LayoutInflater.from(this).inflate(R.layout.activity_feature_1, null)
+        val rootView = LayoutInflater.from(this).inflate(R.layout.activity_feature_2, null)
         setContentView(rootView)
 
         mainView.apply {

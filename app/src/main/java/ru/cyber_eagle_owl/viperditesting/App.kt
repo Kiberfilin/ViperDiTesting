@@ -5,7 +5,6 @@ import dagger.android.support.DaggerApplication
 import ru.cyber_eagle_owl.viperditesting.di.AppComponent
 import ru.cyber_eagle_owl.viperditesting.di.AppModule
 import ru.cyber_eagle_owl.viperditesting.di.DaggerAppComponent
-import timber.log.Timber
 
 class App : DaggerApplication() {
 
@@ -13,10 +12,6 @@ class App : DaggerApplication() {
 
     override fun onCreate() {
         super.onCreate()
-    }
-
-    private fun prepareTimber() {
-        Timber.plant(Timber.DebugTree())
     }
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
