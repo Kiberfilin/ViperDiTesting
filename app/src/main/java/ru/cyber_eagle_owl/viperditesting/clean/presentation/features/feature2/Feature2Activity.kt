@@ -3,10 +3,11 @@ package ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.widget.Toast
 import ru.cyber_eagle_owl.viperditesting.R
 import ru.cyber_eagle_owl.viperditesting.clean.base.BaseActivity
-import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature1.viper.Feature1ViperContract
+import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2.viper.Feature2ViperMainContract
 import javax.inject.Inject
 
 class Feature2Activity : BaseActivity() {
@@ -14,7 +15,7 @@ class Feature2Activity : BaseActivity() {
     private var currentToast: Toast? = null
 
     @Inject
-    lateinit var mainView: Feature1ViperContract.MainView
+    lateinit var mainView: Feature2ViperMainContract.MainView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,9 +24,24 @@ class Feature2Activity : BaseActivity() {
         val rootView = LayoutInflater.from(this).inflate(R.layout.activity_feature_2, null)
         setContentView(rootView)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         mainView.apply {
             setRootView(rootView)
             onFinishInflate()
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        Log.d("TAG", "onOptionsItemSelected")
+
+        return when (item?.itemId) {
+            android.R.id.home -> {
+                Log.d("TAG", "mainView = $mainView")
+                mainView.feature2BackPressed()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 

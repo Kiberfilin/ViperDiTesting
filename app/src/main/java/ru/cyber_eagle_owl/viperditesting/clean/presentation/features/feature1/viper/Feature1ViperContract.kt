@@ -27,6 +27,8 @@ interface Feature1ViperContract {
         fun onInteractorFromRepositoryCheckingTvClick()
 
         fun onRouterPreFlightCheckingTvClick()
+
+        fun onGoToFeature2BtnClick()
     }
 
     interface MainRouter : ViperRouter {
@@ -34,5 +36,7 @@ interface Feature1ViperContract {
         val activity: Feature1Activity
 
         fun preFlightCheck()
+
+        fun routeToFeature2Activity()
     }
 }

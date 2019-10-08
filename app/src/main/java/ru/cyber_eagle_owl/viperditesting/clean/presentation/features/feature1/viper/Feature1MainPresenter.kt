@@ -7,6 +7,7 @@ import javax.inject.Inject
 
 class Feature1MainPresenter @Inject constructor() : BasePresenter(),
     Feature1ViperContract.MainPresenter, CheckInteractorPresentationOutputPort {
+
     override lateinit var view: Feature1ViperContract.MainView
 
     private var isTowardsRepositoryDirectionChecking = false
@@ -16,6 +17,10 @@ class Feature1MainPresenter @Inject constructor() : BasePresenter(),
 
     @Inject
     lateinit var router: Feature1ViperContract.MainRouter
+
+    override fun onGoToFeature2BtnClick() {
+        router.routeToFeature2Activity()
+    }
 
     override fun onRouterPreFlightCheckingTvClick() {
         router.preFlightCheck()

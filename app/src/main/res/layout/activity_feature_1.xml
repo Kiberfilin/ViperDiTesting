@@ -63,4 +63,16 @@
         app:layout_constraintTop_toBottomOf="@+id/interactorFromRepositoryCheckTv"
         app:layout_constraintVertical_bias="0.087" />
 
+    <Button
+        android:id="@+id/goToFeature2Btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Feature 2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/routerPreFlightCheckingTv"
+        app:layout_constraintVertical_bias="0.042" />
+
 </android.support.constraint.ConstraintLayout>

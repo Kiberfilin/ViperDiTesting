@@ -1,6 +1,7 @@
 package ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature1.viper
 
 import android.util.Log
+import android.widget.Button
 import android.widget.TextView
 import ru.cyber_eagle_owl.viperditesting.R
 import ru.cyber_eagle_owl.viperditesting.clean.presentation.vipercore.BaseView
@@ -14,6 +15,7 @@ class Feature1MainView @Inject constructor() : BaseView<Feature1ViperContract.Ma
     private lateinit var interactorTowardsRepositoryCheckingTv: TextView
     private lateinit var interactorFromRepositoryCheckingTv: TextView
     private lateinit var routerPreFlightTestingTv: TextView
+    private lateinit var goToFeature2Btn: Button
 
     override fun onFinishInflate() {
         Log.d("TAG", "onFinishInflate()")
@@ -31,6 +33,7 @@ class Feature1MainView @Inject constructor() : BaseView<Feature1ViperContract.Ma
         interactorFromRepositoryCheckingTv =
             viperRootView.findViewById(R.id.interactorFromRepositoryCheckTv)
         routerPreFlightTestingTv = viperRootView.findViewById(R.id.routerPreFlightCheckingTv)
+        goToFeature2Btn = viperRootView.findViewById(R.id.goToFeature2Btn)
     }
 
     private fun setOnClickListeners() {
@@ -50,6 +53,10 @@ class Feature1MainView @Inject constructor() : BaseView<Feature1ViperContract.Ma
         routerPreFlightTestingTv.setOnClickListener {
             Log.d("TAG", "routerPreFlightTestingTv.setOnClickListener")
             presenter.onRouterPreFlightCheckingTvClick()
+        }
+        goToFeature2Btn.setOnClickListener {
+            Log.d("TAG", "goToFeature2Btn.setOnClickListener")
+            presenter.onGoToFeature2BtnClick()
         }
     }
 
