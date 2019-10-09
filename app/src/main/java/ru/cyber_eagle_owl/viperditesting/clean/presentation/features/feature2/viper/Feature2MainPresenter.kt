@@ -33,6 +33,7 @@ class Feature2MainPresenter @Inject constructor() : BasePresenter(),
         this.view = view
         feature2MainTestInteractor.subscribeOn(this)
         checkFeature2Activity()
+        router.setFragment1()
     }
 
 }
