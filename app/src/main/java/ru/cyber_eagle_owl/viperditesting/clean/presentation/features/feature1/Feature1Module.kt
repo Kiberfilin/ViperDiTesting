@@ -6,9 +6,9 @@ import ru.cyber_eagle_owl.viperditesting.clean.data.repositories.CheckingReposit
 import ru.cyber_eagle_owl.viperditesting.clean.domain.boundaries.presenter.inputports.CheckInteractorPresentationInputPort
 import ru.cyber_eagle_owl.viperditesting.clean.domain.boundaries.repository.inputports.CheckInteractorDataInputPort
 import ru.cyber_eagle_owl.viperditesting.clean.domain.interactors.CheckInteractor
-import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature1.viper.Feature1MainPresenter
-import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature1.viper.Feature1MainRouter
-import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature1.viper.Feature1MainView
+import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature1.viper.main.Feature1MainPresenter
+import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature1.viper.main.Feature1MainRouter
+import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature1.viper.main.Feature1MainView
 import ru.cyber_eagle_owl.viperditesting.di.scopes.ActivityScope
 import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature1.viper.Feature1ViperContract.*
 

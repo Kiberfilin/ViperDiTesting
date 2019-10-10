@@ -14,6 +14,10 @@ interface Feature2ViperMainContract {
         fun showToast(text: String)
 
         fun feature2BackPressed()
+
+        fun setInitialViewsVisibility()
+
+        fun showDataFromSharedPref(dataFromSharedPref: String)
     }
 
     interface MainPresenter : ViperPresenter {
@@ -23,6 +27,10 @@ interface Feature2ViperMainContract {
         fun onViewCreated(view: MainView)
 
         fun onFeature2BackPressed()
+
+        fun onButtonSaveClicked(textToSave: String)
+
+        fun onButtonShowClicked()
     }
 
     interface MainRouter : ViperRouter {

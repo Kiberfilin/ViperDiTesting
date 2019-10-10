@@ -1,7 +1,8 @@
-package ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature1.viper
+package ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature1.viper.main
 
 import ru.cyber_eagle_owl.viperditesting.clean.domain.boundaries.presenter.inputports.CheckInteractorPresentationInputPort
 import ru.cyber_eagle_owl.viperditesting.clean.domain.boundaries.presenter.outputports.CheckInteractorPresentationOutputPort
+import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature1.viper.Feature1ViperContract
 import ru.cyber_eagle_owl.viperditesting.clean.presentation.vipercore.BasePresenter
 import javax.inject.Inject
 

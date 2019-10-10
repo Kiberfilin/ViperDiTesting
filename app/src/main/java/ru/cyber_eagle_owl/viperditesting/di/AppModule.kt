@@ -19,7 +19,7 @@ class AppModule(private val application: DaggerApplication) {
     @Provides
     @ApplicationScope
     fun provideSharedPreferencesHelper(context: Context): SharedPreferencesHelper {
-        return SharedPreferencesHelper(context.getSharedPreferences("SADDAY APP", Context.MODE_PRIVATE))
+        return SharedPreferencesHelper(context.getSharedPreferences("VIPER TESTING APP", Context.MODE_PRIVATE))
     }
 
     @Provides

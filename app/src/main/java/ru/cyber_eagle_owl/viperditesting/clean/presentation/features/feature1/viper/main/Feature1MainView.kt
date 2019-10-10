@@ -1,9 +1,10 @@
-package ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature1.viper
+package ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature1.viper.main
 
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import ru.cyber_eagle_owl.viperditesting.R
+import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature1.viper.Feature1ViperContract
 import ru.cyber_eagle_owl.viperditesting.clean.presentation.vipercore.BaseView
 import javax.inject.Inject
 

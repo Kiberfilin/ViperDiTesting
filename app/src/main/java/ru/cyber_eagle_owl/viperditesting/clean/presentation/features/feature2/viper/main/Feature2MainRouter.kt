@@ -1,12 +1,12 @@
-package ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2.viper
+package ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2.viper.main
 
 import android.content.Intent
 import android.util.Log
-import android.widget.FrameLayout
 import ru.cyber_eagle_owl.viperditesting.R
 import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature1.Feature1Activity
 import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2.Feature2Activity
 import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2.fragments.Feature2Fragment1
+import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2.viper.Feature2ViperMainContract
 import ru.cyber_eagle_owl.viperditesting.clean.presentation.vipercore.BaseRouter
 import javax.inject.Inject
 

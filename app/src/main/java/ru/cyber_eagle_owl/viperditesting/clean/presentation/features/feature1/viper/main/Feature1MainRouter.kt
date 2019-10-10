@@ -1,13 +1,15 @@
-package ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature1.viper
+package ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature1.viper.main
 
 import android.content.Intent
 import android.util.Log
 import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature1.Feature1Activity
+import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature1.viper.Feature1ViperContract
 import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2.Feature2Activity
 import ru.cyber_eagle_owl.viperditesting.clean.presentation.vipercore.BaseRouter
 import javax.inject.Inject
 
-class Feature1MainRouter @Inject constructor() : BaseRouter(), Feature1ViperContract.MainRouter {
+class Feature1MainRouter @Inject constructor() : BaseRouter(),
+    Feature1ViperContract.MainRouter {
 
     @Inject
     override lateinit var activity: Feature1Activity
