@@ -1,7 +1,5 @@
 package ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2.fragments
 
-import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -10,6 +8,8 @@ import android.view.ViewGroup
 
 import ru.cyber_eagle_owl.viperditesting.R
 import ru.cyber_eagle_owl.viperditesting.clean.base.BaseFragment
+import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2.viper.Feature2ViperFragment1Contract
+import javax.inject.Inject
 
 /*
 
@@ -33,6 +33,9 @@ class Feature2Fragment1 : BaseFragment() {
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
 */
+    @Inject
+    lateinit var fragment1View: Feature2ViperFragment1Contract.Fragment1View
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         /*arguments?.let {
@@ -46,7 +49,14 @@ class Feature2Fragment1 : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_feature2_fragment1, container, false)
+
+        val rootView = inflater.inflate(R.layout.fragment1_feature2, container, false)
+        fragment1View.apply {
+            setRootView(rootView)
+            onFinishInflate()
+        }
+
+        return rootView
     }
 
     // TODO: Rename method, update argument and hook method into UI event

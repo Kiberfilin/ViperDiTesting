@@ -1,6 +1,7 @@
 package ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2.viper
 
 import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2.Feature2Activity
+import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2.fragments.Feature2Fragment1
 import ru.cyber_eagle_owl.viperditesting.clean.presentation.vipercore.ViperPresenter
 import ru.cyber_eagle_owl.viperditesting.clean.presentation.vipercore.ViperRouter
 import ru.cyber_eagle_owl.viperditesting.clean.presentation.vipercore.ViperView
@@ -40,6 +41,8 @@ interface Feature2ViperMainContract {
         fun routeToFeature1Activity()
 
         fun setFragment1()
+
+        fun transferDataToFragment1(data: String)
     }
 }
 
@@ -48,6 +51,10 @@ interface Feature2ViperFragment1Contract {
     interface Fragment1View : ViperView<Fragment1Presenter> {
 
         fun onFinishInflate()
+
+        fun onDataTransferFromFeature2Activity(data: String)
+
+        fun setHeaderText(text: String)
     }
 
     interface Fragment1Presenter : ViperPresenter {
@@ -55,11 +62,17 @@ interface Feature2ViperFragment1Contract {
         var view: Fragment1View
 
         fun onViewCreated(view: Fragment1View)
+
+        fun onDataTransferFromFeature2Activity(data: String)
+
+        fun onToFragment2BtnClicked()
     }
 
     interface Fragment1Router : ViperRouter {
 
-        val activity: Feature2Activity
+        val fragment: Feature2Fragment1
+
+        fun routeToFragment2()
     }
 }
 

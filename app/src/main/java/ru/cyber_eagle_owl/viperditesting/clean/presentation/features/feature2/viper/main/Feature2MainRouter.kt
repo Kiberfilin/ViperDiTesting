@@ -13,12 +13,20 @@ import javax.inject.Inject
 class Feature2MainRouter @Inject constructor() : BaseRouter(),
     Feature2ViperMainContract.MainRouter {
 
+    private val tag = "Fragment1"
+
     @Inject
     override lateinit var activity: Feature2Activity
 
+    override fun transferDataToFragment1(data: String) {
+        (activity.supportFragmentManager?.findFragmentByTag(tag) as Feature2Fragment1)
+            ?.fragment1View
+            .onDataTransferFromFeature2Activity(data)
+    }
+
     override fun setFragment1() {
         Log.d("TAG", "setFragment1()")
-        val tag = "Fragment1"
+
         activity.supportFragmentManager?.apply {
             if (findFragmentByTag(tag) == null) {
                 Log.d(

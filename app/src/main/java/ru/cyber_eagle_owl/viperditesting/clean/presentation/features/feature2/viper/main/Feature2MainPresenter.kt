@@ -29,8 +29,8 @@ class Feature2MainPresenter @Inject constructor() : BasePresenter(),
     lateinit var router: Feature2ViperMainContract.MainRouter
 
     override fun onDataFromSharedPrefHasBeenGotten(dataFromSharedPref: String) {
-        //todo сделать немного магии...
         view.showDataFromSharedPref(dataFromSharedPref)
+        router.transferDataToFragment1(dataFromSharedPref)
     }
 
     override fun onButtonSaveClicked(textToSave: String) {
