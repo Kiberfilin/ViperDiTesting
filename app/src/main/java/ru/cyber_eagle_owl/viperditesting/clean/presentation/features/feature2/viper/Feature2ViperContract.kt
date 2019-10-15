@@ -2,6 +2,7 @@ package ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2.v
 
 import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2.Feature2Activity
 import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2.fragments.Feature2Fragment1
+import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2.fragments.Feature2Fragment2
 import ru.cyber_eagle_owl.viperditesting.clean.presentation.vipercore.ViperPresenter
 import ru.cyber_eagle_owl.viperditesting.clean.presentation.vipercore.ViperRouter
 import ru.cyber_eagle_owl.viperditesting.clean.presentation.vipercore.ViperView
@@ -17,6 +18,8 @@ interface Feature2ViperMainContract {
         fun feature2BackPressed()
 
         fun setInitialViewsVisibility()
+
+        fun setViewsVisibilityForFragment2()
 
         fun showDataFromSharedPref(dataFromSharedPref: String)
     }
@@ -81,6 +84,8 @@ interface Feature2ViperFragment2Contract {
     interface Fragment2View : ViperView<Fragment2Presenter> {
 
         fun onFinishInflate()
+
+        fun setHeaderText(text: String)
     }
 
     interface Fragment2Presenter : ViperPresenter {
@@ -88,10 +93,20 @@ interface Feature2ViperFragment2Contract {
         var view: Fragment2View
 
         fun onViewCreated(view: Fragment2View)
+
+        fun onToFragment1BtnClicked()
+
+        fun onFragment2SaveBtnClicked()
+
+        fun onFragment2ShowBtnClicked()
+
+        fun onFragment2TransferDataToFragment1BtnClicked()
     }
 
     interface Fragment2Router : ViperRouter {
 
-        val activity: Feature2Activity
+        val fragment: Feature2Fragment2
+
+        fun routeToFragment1()
     }
 }

@@ -19,9 +19,10 @@ class Feature2MainRouter @Inject constructor() : BaseRouter(),
     override lateinit var activity: Feature2Activity
 
     override fun transferDataToFragment1(data: String) {
-        (activity.supportFragmentManager?.findFragmentByTag(tag) as Feature2Fragment1)
-            ?.fragment1View
-            .onDataTransferFromFeature2Activity(data)
+        activity.supportFragmentManager?.findFragmentByTag(tag)?.apply {
+            (this as Feature2Fragment1).fragment1View
+                .onDataTransferFromFeature2Activity(data)
+        }
     }
 
     override fun setFragment1() {

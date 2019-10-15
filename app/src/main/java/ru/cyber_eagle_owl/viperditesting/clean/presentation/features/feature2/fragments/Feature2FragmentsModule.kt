@@ -4,9 +4,10 @@ import dagger.Binds
 import dagger.Module
 import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2.viper.Feature2ViperFragment1Contract.*
 import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2.viper.Feature2ViperFragment2Contract.*
-import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2.viper.fragment1.Feature2Fragment1Presenter
-import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2.viper.fragment1.Feature2Fragment1Router
-import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2.viper.fragment1.Feature2Fragment1View
+import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2.viper.fragment1.*
+import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2.viper.fragment2.Feature2Fragment2Presenter
+import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2.viper.fragment2.Feature2Fragment2Router
+import ru.cyber_eagle_owl.viperditesting.clean.presentation.features.feature2.viper.fragment2.Feature2Fragment2View
 import ru.cyber_eagle_owl.viperditesting.di.scopes.FragmentScope
 
 @Module
@@ -23,6 +24,18 @@ abstract class Feature2FragmentsModule {
     @Binds
     @FragmentScope
     abstract fun fragment1Router(fragment1Router: Feature2Fragment1Router): Fragment1Router
+
+    @Binds
+    @FragmentScope
+    abstract fun fragment2View(fragment2View: Feature2Fragment2View): Fragment2View
+
+    @Binds
+    @FragmentScope
+    abstract fun fragment2Presenter(fragment2Presenter: Feature2Fragment2Presenter): Fragment2Presenter
+
+    @Binds
+    @FragmentScope
+    abstract fun fragment2Router(fragment2Router: Feature2Fragment2Router): Fragment2Router
 
 
 /*

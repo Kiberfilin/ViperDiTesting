@@ -40,6 +40,14 @@ class Feature2MainView @Inject constructor() : BaseView<Feature2ViperMainContrac
         showTv.visibility = View.VISIBLE
         showTv.text = dataFromSharedPref
     }
+
+    override fun setViewsVisibilityForFragment2() {
+        btnSave.visibility = View.GONE
+        btnShow.visibility = View.GONE
+        saveEditText.visibility = View.GONE
+        showTv.visibility = View.GONE
+    }
+
     override fun setInitialViewsVisibility() {
         btnSave.visibility = View.VISIBLE
         btnShow.visibility = View.VISIBLE
